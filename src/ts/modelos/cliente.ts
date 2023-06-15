@@ -12,8 +12,8 @@ export default class Cliente {
   private endereco!: Endereco;
   private documentos: Documento[] = [];
   private dependentes: Cliente[] = [];
-  private acomodacao!: Acomodacao;
   private titular!: Cliente;
+  private acomodacao!: Acomodacao | undefined;
 
   constructor(nome: string, nomeSocial: string, dataNascimento: Date) {
     this.nome = nome;
@@ -40,9 +40,6 @@ export default class Cliente {
   public get Endereco() {
     return this.endereco;
   }
-  public get Acomodacao() {
-    return this.acomodacao;
-  }
   public get Documentos() {
     return this.documentos;
   }
@@ -52,11 +49,29 @@ export default class Cliente {
   public get Titular() {
     return this.titular;
   }
+  public get Acomodacao(): Acomodacao | undefined {
+    return this.acomodacao;
+  }
 
+  public set Nome(nome: string) {
+    this.nome = nome;
+  }
+  public set NomeSocial(nomeSocial: string) {
+    this.nomeSocial = nomeSocial;
+  }
+  public set DataNascimento(dataNascimento: Date) {
+    this.dataNascimento = dataNascimento;
+  }
   public set Endereco(endereco: Endereco) {
     this.endereco = endereco;
   }
-  public set Acomodacao(acomodacao: Acomodacao) {
-    this.acomodacao = acomodacao;
+  public set Telefones(telefone: Telefone[]) {
+    this.telefones = telefone;
+  }
+  public set Documentos(documento: Documento[]) {
+    this.documentos = documento;
+  }
+  public set Acomodacao(value: Acomodacao | undefined) {
+    this.acomodacao = value;
   }
 }

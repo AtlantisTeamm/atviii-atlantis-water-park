@@ -5,7 +5,7 @@ import CadastroCpf from "./cadastroCPF";
 import cadastroPassaporte from "./cadastroPassaporte";
 import CadastroRg from "./cadastroRg";
 
-export default class CadastrarDocumentosCliente extends Processo {
+export default class CadastroDocumentosCliente extends Processo {
     private cliente: Cliente
     constructor(cliente: Cliente) {
         super()
